@@ -35,10 +35,6 @@ Cory Watson, C<< <gphat@cpan.org> >>
 
 Infinity Interactive, L<http://www.iinteractive.com>
 
-=head1 ACKNOWLEDGEMENTS
-
-Many of the ideas here come from my experience using the Cairo library.
-
 =head1 BUGS
 
 Please report any bugs or feature requests to C<bug-geometry-primitive at rt.cpan.org>, or through

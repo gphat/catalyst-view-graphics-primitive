@@ -89,14 +89,60 @@ Catalyst::View::Graphics::Primitive - A Catalyst View for Graphics::Primitive
   # configure in lib/MyApp.pm
   MyApp->config(
     ...
-    'Graphics::Primitive' => {
+    'View::Graphics::Primitive' => {
         driver => 'Cairo',
         driver_args => { format => 'pdf' },
         content_type => 'application/pdf'
     }
   )
 
-=head1 METHOD
+=head1 DESCRIPTION
+
+This is the L<Catalyst> view class for L<Graphics::Primitive>.  Any components
+created with Graphics::Primitive can be passed to this view and rendered via
+whatever driver you desire.  This view has a helper so you can create your
+view in the standard Catalyst way with I<myapp_create.pl> (where I<myapp> is
+replaced with your application name).
+
+=head1 CONFIGURATION
+
+The following configuration options can be set:
+
+=over 4
+
+=item I<content_type>
+
+Sets the default content type to put into the response.
+
+=item I<driver>
+
+Sets the default driver to use when rendering a component.
+
+=item I<driver_args>
+
+Sets the arguments to pass when insantiating the driver.  A common example
+for the Cairo driver would be:
+
+  MyApp->config(
+      ...
+      'View::Graphics::Primitive' => {
+          driver => 'Cairo',
+          driver_args => { format => 'pdf' },
+          content_type => 'application/pdf'
+      }
+  );
+ 
+=back
+ 
+All of these options can be overridden at request time by prefixing the name
+with C<graphics_primitive_> and setting the value in the stash.  For example,
+to override the driver, args and content type:
+
+  $c->stash->{graphics_primitive_driver} = 'SomethingElse';
+  $c->stash->{graphics_primitive_driver_args} = { format => 'png' };
+  $c->stash->{graphics_primitive_content_type} = 'image/png';
+
+=head1 METHODS
 
 =head2 new
 
@@ -131,7 +177,7 @@ Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 ACKNOWLEDGEMENTS
 
-Many of the ideas here come from my experience using the Cairo library.
+This module was inspired by L<Catalyst::View::GD> and L<Catalyst::View::TT>.
 
 =head1 BUGS
 
