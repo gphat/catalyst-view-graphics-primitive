@@ -9,7 +9,7 @@ use Scalar::Util 'blessed';
 
 use Catalyst::Exception;
 
-our $VERSION   = '0.01';
+our $VERSION   = '0.02';
 our $AUTHORITY = 'cpan:GPHAT';
 
 use base 'Catalyst::View';
@@ -62,7 +62,7 @@ sub process {
         if($gp->can('layout_manager')) {
             $gp->layout_manager->do_layout($gp);
         }
-        $driver->pack($gp);
+        $driver->finalize($gp);
         $driver->draw($gp);
 
         $c->response->content_type($content_type);
@@ -159,7 +159,7 @@ component will then be moved through the Graphics::Primitive rendering
 lifecycle as follows:
 
   $driver->prepare($comp);
-  $driver->pack($comp);
+  $driver->finalize($comp);
   if($comp->can('layout_manager')) {
       $comp->layout_manager->do_layout($comp);
   }

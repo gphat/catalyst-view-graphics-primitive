@@ -1,5 +1,8 @@
 Revision history for Catalyst-View-Graphics-Primitive
 
+0.02
+  - Keep up with API changes in Graphics::Primitive
+
 0.01
         First version, released on an unsuspecting world.
 
