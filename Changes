@@ -1,5 +1,8 @@
 Revision history for Catalyst-View-Graphics-Primitive
 
+0.03
+  - Catch test mock driver up with real GP so tests pass
+
 0.02
   - Keep up with API changes in Graphics::Primitive
 

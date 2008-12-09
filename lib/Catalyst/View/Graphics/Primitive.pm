@@ -9,7 +9,7 @@ use Scalar::Util 'blessed';
 
 use Catalyst::Exception;
 
-our $VERSION   = '0.02';
+our $VERSION   = '0.03';
 our $AUTHORITY = 'cpan:GPHAT';
 
 use base 'Catalyst::View';
