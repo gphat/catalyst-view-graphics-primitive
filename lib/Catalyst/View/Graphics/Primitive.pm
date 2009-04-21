@@ -55,7 +55,7 @@ sub process {
         }
 
         my $dargs = $c->stash->{'graphics_primitive_driver_args'}
-            || $self->{'driver_args'};
+            || $self->{'driver_args'} || {};
         my $driver = $dclass->new($dargs);
 
         $driver->prepare($gp);
