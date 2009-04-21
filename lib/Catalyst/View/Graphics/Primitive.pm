@@ -4,24 +4,14 @@ use strict;
 use warnings;
 
 use Class::MOP;
-use NEXT;
 use Scalar::Util 'blessed';
 
 use Catalyst::Exception;
 
-our $VERSION   = '0.03';
+our $VERSION   = '0.04';
 our $AUTHORITY = 'cpan:GPHAT';
 
 use base 'Catalyst::View';
-
-sub new {
-    my($class, $c, $args) = @_;
-    my $self = $class->NEXT::new($c, $args);
-
-    my $config = $c->config->{'View::Graphics::Primitive'};
-
-    return $self;
-}
 
 sub process {
     my $self = shift;

@@ -1,5 +1,11 @@
 Revision history for Catalyst-View-Graphics-Primitive
 
+0.04
+  - Remove Pod::Coverage::Moose dependency (rafl)
+  - Don't pass undef to a Moose constructor (rafl)
+  - Remove useless new method (gphat)
+  - Move pod tests to xt/author (gphat)
+
 0.03
   - Catch test mock driver up with real GP so tests pass
 
