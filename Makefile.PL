@@ -8,6 +8,4 @@ requires    'Graphics::Primitive' => 0.29;
 requires    'Moose' => 0.57;
 requires    'Scalar::Util' => 1.19;
 
-auto_install;
-
 WriteAll;

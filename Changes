@@ -1,5 +1,8 @@
 Revision history for Catalyst-View-Graphics-Primitive
 
+0.05    November 19, 2009
+  - Fix broken M:I
+
 0.04
   - Remove Pod::Coverage::Moose dependency (rafl)
   - Don't pass undef to a Moose constructor (rafl)
